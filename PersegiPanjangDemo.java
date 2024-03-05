@@ -3,11 +3,15 @@ import java.util.Scanner;
 public class PersegiPanjangDemo {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        PersegiPanjang[] arrayOfPersegiPanjang = new PersegiPanjang[3];
+
+        System.out.print("Masukkan jumlah persegi panjang: ");
+        int jumlahPersegiPanjang = sc.nextInt();
+        
+        PersegiPanjang[] arrayOfPersegiPanjang = new PersegiPanjang[jumlahPersegiPanjang];
 
         System.out.println("Masukkan panjang dan lebar untuk setiap persegi panjang:");
 
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < jumlahPersegiPanjang; i++) {
             System.out.println("Persegi panjang ke-" + (i + 1));
             System.out.print("Masukkan panjang: ");
             int panjang = sc.nextInt();
@@ -17,7 +21,7 @@ public class PersegiPanjangDemo {
             arrayOfPersegiPanjang[i] = new PersegiPanjang(panjang, lebar);
         }
 
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < jumlahPersegiPanjang; i++) {
             System.out.println("Persegi panjang ke-" + (i + 1) + ": ");
             arrayOfPersegiPanjang[i].cetakInfo();
             System.out.println("Luas: " + arrayOfPersegiPanjang[i].hitungLuas());
@@ -25,4 +29,3 @@ public class PersegiPanjangDemo {
         }
     }
 }
-
